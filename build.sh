@@ -1,0 +1,1 @@
+mvn -f maven/org.eclipse.emf.mwe2.parent/pom.xml -Dtycho.localArtifacts=ignore -Dmaven.repo.local=.m2/repository -Dtycho-version=3.0.0-SNAPSHOT clean install -Dtycho.resolver.classic=false -DskipTests

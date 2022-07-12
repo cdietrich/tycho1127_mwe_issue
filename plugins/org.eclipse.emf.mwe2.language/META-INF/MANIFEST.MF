@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MWE2 Language
+Bundle-Vendor: Eclipse Xtext
+Bundle-Version: 2.14.0.qualifier
+Bundle-SymbolicName: org.eclipse.emf.mwe2.language;singleton:=true
+Bundle-ActivationPolicy: lazy
+Import-Package: org.apache.log4j;version="1.2.19"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: org.eclipse.emf.mwe2.language
