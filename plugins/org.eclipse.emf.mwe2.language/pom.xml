@@ -10,17 +10,4 @@
 	<artifactId>org.eclipse.emf.mwe2.language</artifactId>
 	<packaging>eclipse-plugin</packaging>
 	<name>org.eclipse.emf.mwe2.language</name>
-
-	<properties>
-		<p2-deploy-only>false</p2-deploy-only>
-	</properties>
-	<dependencies>
-		<!--
-		<dependency>
-			<groupId>org.eclipse.emf</groupId>
-			<artifactId>org.eclipse.emf.mwe2.runtime</artifactId>
-			<version>[${project.version}]</version>
-		</dependency>
-		-->
-	</dependencies>
 </project>

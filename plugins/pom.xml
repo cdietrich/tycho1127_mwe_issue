@@ -10,9 +10,6 @@
 	<artifactId>org.eclipse.emf.mwe2.plugins-parent</artifactId>
 	<packaging>pom</packaging>
 	<name>org.eclipse.emf.mwe2.plugins-parent</name>
-	<properties>
-		<p2-deploy-only>true</p2-deploy-only>
-	</properties>
 	<modules>
 		<module>org.eclipse.emf.mwe2.language</module>
 		<module>org.eclipse.emf.mwe2.lib</module>
