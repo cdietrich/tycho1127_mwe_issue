@@ -26,36 +26,13 @@
 		<tycho-version>3.0.0-SNAPSHOT</tycho-version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven-install-version>2.5.2</maven-install-version>
-		<maven-deploy-version>2.8.2</maven-deploy-version>
-		<maven-javadoc-version>2.10.4</maven-javadoc-version>
-		<commons-cli.version>1.4</commons-cli.version>
-		<guava.version>30.1-jre</guava.version>
-		<google-inject.version>5.0.1</google-inject.version>
-		<log4j.version>1.2.19</log4j.version>
-		<commons-logging.version>1.1.3</commons-logging.version>
-		<cbi-plugins.version>1.3.1</cbi-plugins.version>
-
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
 
-		<!-- sign.skip = true skips gpg and eclipse signing -->
-		<sign.skip>true</sign.skip>
-		<gpg-skip>${sign.skip}</gpg-skip>
 		<tycho.localArtifacts>ignore</tycho.localArtifacts>
-		<!-- p2-deploy-only = true skips the deploy step -->
-		<p2-deploy-only>false</p2-deploy-only>
-		<BUILD_TYPE>N</BUILD_TYPE>
-		<BUILD_ALIAS />
 	</properties>
 	<modules>
-		<module>../org.eclipse.emf.mwe2.target</module>
 		<module>../../plugins/</module>
-		<!--
-		<module>../../features/</module>
-		<module>../../tests/</module>
-		<module>../org.eclipse.emf.mwe2.repository</module>
-		-->
 	</modules>
 
 	<licenses>
@@ -66,22 +43,19 @@
 	</licenses>
 	
 	<pluginRepositories>
-		<!-- for eclipse-jarsigner-plugin -->
-		<pluginRepository>
-			<id>eclipse</id>
-			<url>https://repo.eclipse.org/content/repositories/cbi/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
 		<pluginRepository>
 			<id>tycho-snapshots</id>
 			<url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</url>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<repositories>
+		<repository>
+			<id>orbit</id>
+			<url>https://download.eclipse.org/tools/orbit/downloads/2022-06</url>
+			<layout>p2</layout>
+		</repository>
+	</repositories>
 	
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -92,26 +66,11 @@
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
-			<!--
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-versions-plugin</artifactId>
-				<version>${tycho-version}</version>
-			</plugin>
-			-->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<target>
-						<artifact>
-							<groupId>org.eclipse.emf</groupId>
-							<artifactId>org.eclipse.emf.mwe2.target</artifactId>
-							<version>${project.parent.version}</version>
-							<!-- Uses artifactId+.target by default -->
-						</artifact>
-					</target>
 					<environments>
 						<environment>
 							<os>macosx</os>
@@ -131,21 +90,6 @@
 					</environments>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-compiler-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<useProjectSettings>true</useProjectSettings>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
-	<scm>
-		<connection>scm:git:git://git.eclipse.org/gitroot/emf/org.eclipse.mwe.git</connection>
-		<developerConnection>scm:git:ssh://git.eclipse.org/gitroot/emf/org.eclipse.mwe.git</developerConnection>
-		<url>https://git.eclipse.org/c/emf/org.eclipse.mwe.git/</url>
-	</scm>
-	<url>https://projects.eclipse.org/projects/modeling.emf.mwe</url>
-	<description>Modeling Workflow Engine</description>
 </project>
